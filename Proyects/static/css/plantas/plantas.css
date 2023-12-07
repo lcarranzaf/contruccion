@@ -1,0 +1,99 @@
+@media (min-width:320px)  { 
+    body, table, p, img {
+    padding-right: 1em;
+    width: 100%;
+    }
+ }
+@media (min-width:480px)  { 
+/* smartphones, Android phones, landscape iPhone */ 
+}
+@media (min-width:600px)  { 
+/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+}
+@media (min-width:801px)  { 
+/* tablet, landscape iPad, lo-res laptops ands desktops */ 
+}
+@media (min-width:1025px) { 
+/* big landscape tablets, laptops, and desktops */ 
+}
+@media (min-width:1281px) { 
+/* hi-res laptops and desktops */ 
+}
+
+ #content-container {
+min-height: 100vh;
+position: relative;
+} 
+
+
+footer {
+background-color: #967171;
+color: #b19393;
+padding: 20px;
+text-align: center;
+position: fixed; 
+bottom: 0;
+width: 100%;
+}
+
+footer a {
+color: #fff;
+text-decoration: none;
+}
+
+footer a:hover {
+text-decoration: underline;
+}
+.section{
+position: absolute;
+width: 100%;
+display: block;}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#espacio-superior{
+    margin-top: 250px;
+}
+.plant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    
+    position: relative;
+}
+
+.plant-card {
+    border: 1px solid #fffdfd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    
+
+    
+}
+
+.plant-card img {
+    width: 250px;
+    height: 240px;
+    border-radius: 8px;
+
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

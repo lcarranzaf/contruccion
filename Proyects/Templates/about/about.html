@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    
+    {% block head %} 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/about/about.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    {% include "navbar/navbar.html" %}
+        <div>
+        <img id="miImagen" src="{%static 'img/about.jpeg' %}" />
+        </div>
+        <div style="width: 730px; height: 86px; left: 602px; top: 350px; position: absolute; color: white; font-size: 50px; font-family: Poppins; font-weight: 600; word-wrap: break-word">About Us</div>
+       
+        <div style="width: 1462px; height: 90px; left: 48px; top: 600px; position: absolute">
+            <div style="width: 438px; height: 370px; left: 1024px; top: 0px; position: absolute"><span style="color: black; font-size: 30px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Sugerencias de plantas<br/></span><span style="color: black; font-size: 30px; font-family: Poppins; font-weight: 500; word-wrap: break-word">      Tomate<br/>      Pimiento<br/>      Cebolla<br/></span></div>
+            <div style="width: 438px; height: 370px; left: 0px; top: 0px; position: absolute"><span style="color: black; font-size: 30px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Sobre la aplicacion web<br/></span><span style="color: rgba(0, 0, 0, 0.61); font-size: 25px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Cuida tu planta<br/></span><span style="color: black; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Esta aplicación nos va a facilitar el proceso de saber cómo cuidar desde cerca nuestra planta, cuenta con un sensor de humedad y llevar un control de riego, y sobre todo, si no tenemos el conocimiento, el nombre de aquella planta podemos escanear esta y nos dará los datos</span></div>
+            <div style="width: 182px; height: 58px; left: 0px; top: 312px; position: absolute">
+                <div style="width: 182px; height: 58px; left: 0px; top: 0px; position: absolute; background: #19692C; border-radius: 30px"></div>
+                <div style="width: 146px; height: 22px; left: 36px; top: 13px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Learn More</div>
+            </div>
+            <div style="width: 182px; height: 58px; left: 1024px; top: 312px; position: absolute">
+                <div style="width: 182px; height: 58px; left: 0px; top: 0px; position: absolute; background: #19692C; border-radius: 30px"></div>
+                <div><a style="text-decoration: none;width: 146px; height: 22px; left: 36px; top: 13px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word" >Learn More</a></div>
+            </div>
+            <img style="width: 466px; height: 370px; left: 498px; top: 0px; position: absolute" src="{%static 'img/gerplant.jpeg' %}" />
+        </div>
+    </div>
+</body>
+
+</html>

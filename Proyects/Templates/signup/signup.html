@@ -1,0 +1,45 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login/inicio.css' %}">
+<div class="card-back ">
+    <div class="center-wrap">
+        <div class="section text-center ">
+            <h4 class="mb-1 pb-1  ">Registrarse</h4>
+            <form method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <div  class="form-group mt-2">
+                  <input htmlFor="username" id="username" type="text" name="username" class="form-style" placeholder="username">
+                  <i class="input-icon uil uil-user"></i>
+                </div>
+
+                <div class="form-group mt-2">
+                    <input  htmlFor="first_name" id="first_name" type="text" name="first_name" class="form-style" placeholder="Nombre">
+                    <i class="input-icon uil uil-user"></i>
+                </div>
+                
+                <div  class="form-group mt-2">
+                  <input htmlFor="last_name" id="last_name" type="text" name="last_name" class="form-style" placeholder="Apellido">
+                  <i class="input-icon uil uil-user"></i>
+                </div>
+
+                <div  class="form-group mt-2">
+                    <input htmlFor="email" id="email" type="email" name="email" class="form-style" placeholder="Correo">
+                    <i class="input-icon uil uil-at"></i>
+                </div>
+
+                <div  class="form-group mt-2">
+                    <input htmlFor="password1" id="password1" type="password" name="password1" class="form-style" placeholder="Contraseña">
+                    <i class="input-icon uil uil-lock-alt"></i>
+                </div>
+
+                <div  class="form-group mt-2">
+                  <input htmlFor="password2" id="password2" type="password" name="password2" class="form-style" placeholder="Confirme Contraseña">
+                  <i class="input-icon uil uil-lock-alt"></i>
+                </div>
+
+                <button type="submit" class="btn mt-4">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

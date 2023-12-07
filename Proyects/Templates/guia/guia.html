@@ -1,0 +1,23 @@
+<!-- guia/guia.html -->
+{% load static %}
+{% block content %}
+    {% block head %} 
+    <link rel="stylesheet" href="{% static 'css/guia/guia.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+    {% endblock %}
+
+    <!-- guia/guia.html -->
+    <h1 class="title">Guía para {{ guia.nombre }}</h1>
+    <p class="desc">{{ guia.descripcion }}</p>
+    {% if guia.imagen %}
+        <img src="{{ guia.imagen.url }}" alt="{{ guia.nombre }}">
+    {% else %}
+        <p>No hay imagen disponible para esta guía.</p>
+    {% endif %}
+    
+
+
+{% endblock %}

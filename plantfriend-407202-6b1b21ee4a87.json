@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "plantfriend-407202",
+  "private_key_id": "6b1b21ee4a8790c39133141a5b4b39b670d22ffb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCrmQG7LJsxNsh0\nUW6QyhJ6wNKZq1GOG+rRSi9BhlcU+dObZF5LwGy1rtLCrDp73xz9Aer2OWxiOaeM\nByjnX7aSy32+6qrqKLorvCkifGASEM2rINaNHdK4f5dzZSmZK4xUedcc8HQx6FwX\nNCjp1hI/dAR+t+oW5VeBWMoUobgSddDUZbGchiT1Lbi/iLzCceb4Zhp8E/dssAk7\nuiICLDCxgg0mySCnVbSAvyT+V2srNv7p8dNr7ZiBNKFBn/a11djDScYz5L7PqwQl\nx2NrkXMIOTaqnmVd2I2/gt82098T/iTNScO91skDat8daAo1plal8l0ztPzG0ol+\nmEGlGUtJAgMBAAECggEAAYwIFXa8psVuf4n1EWNuUOKoeLqFf4lQj8wiP+4k89X1\napW4OejwB0qeW3iaWwqIZDQzuOjh9BgT+BxfvzJANEjsXHUYzwfzTGNOYEwMa61G\nGrsEOX0hggijG2cNPcnEN/C/Qo4Hu3lzocFBIIE4ZI+4XfzCJKxdomy5VFVJkl+v\nbKAm4vZwrCKKz/ds7Rybn8mZauTQ2RVvd77jcKHKhpiQSSD0PfC03CQkYApidqBz\nwnGKEnFnPGH7IMbQJ06j7Ul3WERFBTGIjDSkdyQIUHgp5fn/s7Mk2zcZT2mw+4Th\nLz2DCAC8wMfIqHHzYAq54Y6feiQwHYWTgXZZm6OsQQKBgQDXc+uXG54LUFMXjKmN\nFa7GhRzY89hUknurtnL+/TdBqf0SSiJdIDqiIUIT8dgmbopeuZ+J2t2DBmeMZCzG\nVkFFcVl1yz9291kjFwByrtNiRn2XAJIPc8sl5DLcDVzgn04mkYVR8JpnuVr7ol3l\nkMgnZiJd7+SDcQJQ0/NZ6RpuUQKBgQDL5Dw15TcdzMSODuDSSRdxcq8Px4k76w1Y\n5ITMtt13x7cl4/xSV2T2IYcY6cs8f+gJBFuYpij+Gk0KbUEaOUBqn2YcYr8nStQf\nIXhxAwIJ5UWcSBkKSr3yEFZbL6yx0UD7zGZgP0pZ1/KGJxRUvfRjQ+1NJFRe4tZZ\nAH9Swrv3eQKBgHRUAXroDXA8YXDQoOctMt27F3VIS6B2KtHuw65Ll98bYinS3zT6\n5s2NOXk9ViCCBLHadXpgMsPA3H3fxJEeF0XgSpYgNFcOfBFHJRXGsRlZyAuU4kf3\nlFMUICXSDTi2quKGJb61MxkX6jj9VMdTYc5sBdhEY1RY2xA7MCR2iK/RAoGAXkNP\nnu8w8yMHQFIamL3YC8gkrVvn037RNea4itiEPWtk/iyQLBVhhPVtOxRjtL3BreGI\n42L2krvgIFDwh0ouwNye3cK9c1ICDb5wq3bji2WnMCCZCwwREweAlTnOUotWytLu\nBdNc8XqIEoOgv6jugrIV1NNV+mRPCujS9JU5R6kCgYB+MsDHuPVQxbdQsrk+hsKN\n8h+K/vuFxK2bZJcjHualkMyPHNW8g+nGO5I072mokmtrUds3UIMfDysTiWEF57xC\nhxQJS9lIcPsZJ6XhwllPf5RGGxM1irzKxOdsYs0cI/JxZdozB+hpStJrwODm5tnW\npHCx0AWn/XQZ2HeOJsLNEw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "plantfriend@plantfriend-407202.iam.gserviceaccount.com",
+  "client_id": "111823406072950676038",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/plantfriend%40plantfriend-407202.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

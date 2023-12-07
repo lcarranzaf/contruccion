@@ -1,0 +1,94 @@
+{% load static %}
+{% block content %}
+
+{% block head %} 
+    <link rel="stylesheet" href="{% static 'styles/plantas/plantas.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+{% endblock %}   
+
+<body>
+    {% include "navbar/navbar.html" %}  
+    <div id="espacio-superior"></div>
+    <div class="plant-container">
+    <div class="plant-card">
+        <img src="{%static 'img/tomate.jpg' %}"  alt="Planta 1">
+        
+        <h3>Tomate</h3>
+        <button onclick="verGuia('planta1')">Ver Guía</button>
+    </div>
+    
+    <div class="plant-card">
+        <img src="{%static 'img/pimiento.jpg' %}" alt="Planta 2">
+        <h3>Pimiento</h3>
+        <button onclick="verGuia('planta2')">Ver Guía</button>
+    </div>
+
+    <!-- Agrega más plantas según sea necesario -->
+
+</div>
+
+<script>
+    
+    function verGuia(planta) {
+    // Obtiene el contenido HTML para la guía de la planta seleccionada
+    var guiaHTML = obtenerGuiaHTML(planta);
+
+    // Muestra un cuadro de diálogo personalizado con el contenido de la guía
+    mostrarDialogo(guiaHTML);
+}
+
+function obtenerGuiaHTML(planta) {
+    // Crear el contenido HTML para la guía de la planta
+    var contenidoHTML = "<h2>Guía de " + planta + "</h2>";
+    if(planta === 'planta1'){
+    contenidoHTML += "<p>El tomate es un cultivo que no lo afecta el fotoperíodo o largo del día, sus necesidades de luz oscilan entre las 8 y 16 horas luz al día.</p>";
+    contenidoHTML += "<h3>Temperatura</h3>";
+    contenidoHTML += "<p>Los rangos para un desarrollo óptimo del cultivo oscilan entre los 28-30°C durante el día y 15-18°C durante la noche.</p>";
+    contenidoHTML += "<h3>Suelos</h3>";
+    contenidoHTML += "<p>El pH del suelo tiene que estar dentro de un rango de 5.9-6.5, para tener el mejor aprovechamiento de los fertilizantes que se apliquen.</p>";
+    contenidoHTML += "<h3>Humedad Relativa</h3>";
+    contenidoHTML += "<p>La humedad relativa óptima para el cultivo de tomate oscila entre 65-70%.</p>";
+    contenidoHTML += "<h3>Riego</h3>";
+    contenidoHTML += "<p>El consumo diario de agua por planta adulta de tomate es de aproximadamente 1.5 a 2 litros al día.</p>";
+    contenidoHTML += "<h3>Preparación de la tierra</h3>";
+    contenidoHTML += "<p>La preparación puede realizarse en forma mecánica, con tracción animal a labranza mínima.</p>";
+    contenidoHTML += "<h3>Subsuelo</h3>";
+    contenidoHTML += "<p>Se recomienda realizarla durante la época seca, y puede darse una o dos pasadas en forma cruzada. El subsolado se hace con maquinaria agrícola pesada que pueda penetrar los cinceles a por lo menos una profundidad de 60 cm.</p>";
+    } else if (planta === 'planta2'){
+        contenidoHTML += "<p>Los pimientos requieren una exposición adecuada a la luz solar para un crecimiento saludable. Se recomienda al menos 6-8 horas de luz solar directa al día.</p>";
+        contenidoHTML += "<h3>Humedad Relativa</h3>";
+        contenidoHTML += "<p>La humedad relativa adecuada para los pimientos suele estar entre el 60% y el 80%.</p>";
+        contenidoHTML += "<h3>Preparación de la Tierra</h3>";
+        contenidoHTML += "<p>La preparación adecuada del suelo para el cultivo de pimientos implica varias etapas esenciales.</p>";
+        contenidoHTML += "<h3>Temperatura</h3>";
+        contenidoHTML += "<p>La temperatura ideal para el crecimiento es generalmente entre 20°C y 30°C. Evita temperaturas extremas.</p>";
+        contenidoHTML += "<h3>Suelos</h3>";
+        contenidoHTML += "<p>Un pH del suelo de alrededor de 6.0 a 6.8 es ideal para la mayoría de las variedades de pimientos. Realiza pruebas de suelo para determinar y ajustar el pH según sea necesario.</p>";
+    }
+    return contenidoHTML;
+}
+
+function mostrarDialogo(contenidoHTML) {
+    Swal.fire({
+        html: contenidoHTML,
+        showCancelButton: false,
+        showConfirmButton: true,
+        confirmButtonText: 'Cerrar',
+    });
+    // Crear un contenedor div para el contenido HTML
+    
+}
+
+
+</script>
+
+    
+</body>
+
+
+
+
+{% endblock %}

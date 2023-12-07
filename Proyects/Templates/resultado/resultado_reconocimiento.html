@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado de Reconocimiento</title>
+</head>
+<body>
+
+<h1>Resultado de Reconocimiento</h1>
+
+{% if nombre_planta %}
+    <p>Nombre de la planta: {{ nombre_planta }}</p>
+{% else %}
+    <p>No se pudo determinar el nombre de la planta.</p>
+{% endif %}
+
+</body>
+</html>

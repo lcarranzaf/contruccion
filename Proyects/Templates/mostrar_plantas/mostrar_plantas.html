@@ -1,0 +1,31 @@
+{% load static %}
+
+{% block content %}
+    {% block head %} 
+        <link rel="stylesheet" href="{% static 'css/plantas/plantas.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+    {% endblock %}   
+    {% include "navbar/navbar.html" %} 
+    <h1>Todas las plantas</h1>
+    
+
+    <div id="espacio-superior"></div>
+    
+    <div class="plant-container">
+        {% for planta in plantas %}
+            <div class="plant-card">
+                {% if planta.imagen %}
+                    <img src="{{ planta.imagen.url }}" alt="{{ planta.nombre }}">
+                {% else %}
+                    <p>No hay imagen disponible para esta planta.</p>
+                {% endif %}
+                <h2>{{ planta.nombre }}</h2>
+                <p>{{ planta.comentario }}</p>
+                <a href="{% url 'ver_guia' planta.id %}">Ver Guía</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

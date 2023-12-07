@@ -1,0 +1,449 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+@media (min-width:320px)  { 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+        body, table, p, img {
+        padding-right: 1em;
+        width: 100%;
+        }
+     }
+    @media (min-width:480px)  { 
+    /* smartphones, Android phones, landscape iPhone */ 
+    }
+    @media (min-width:600px)  { 
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    }
+    @media (min-width:801px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    }
+    @media (min-width:1025px) { 
+    /* big landscape tablets, laptops, and desktops */ 
+    }
+    @media (min-width:1281px) { 
+    /* hi-res laptops and desktops */ 
+    }
+a{
+    text-decoration: none;
+}
+#mainDiv {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: white;
+}
+
+#mainImage {
+    width: 1520px; 
+    height: 446px; 
+    left: 0px; 
+    top: 171px; 
+    position: absolute;
+     mix-blend-mode: darken; 
+    border-radius: 8px" 
+}
+
+#overlay {
+    width: 1520px;
+    height: 445px;
+    left: -8px;
+    top: 174px;
+    position: absolute;
+    background: rgba(2, 2, 2, 0.25);
+}
+
+#header {
+    width: 1512px;
+    height: 199px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+#headerBackground {
+    width: 1512px;
+    height: 171px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #1E7E34;
+}
+
+#headerImage {
+    width: 57px;
+    height: 63px;
+    left: 115px;
+    top: 22px;
+    position: absolute;
+    border-radius: 15px;
+}
+
+.headerText {
+    width: 89px;
+    height: 26px;
+    top: 40px;
+    position: absolute;
+    color: #FFF9F9;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    left: 192px;
+}
+
+
+.headerText3 {
+    width: 89px;
+    height: 26px;
+    top: 40px;
+    position: absolute;
+    color: #FFF9F9;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    left: 271px;
+}
+
+.headerText2 {
+    width: 89px;
+    height: 26px;
+    top: 40px;
+    position: absolute;
+    color: #FFF9F9;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    left: 355px;
+}
+
+.headerLine {
+    width: 33px;
+    height: 0px;
+    top: 37px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border: 1px white solid;
+    left: 255px;
+}
+
+
+
+.headerLine2 {
+    width: 33px;
+    height: 0px;
+    top: 37px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    border: 1px white solid;
+    left: 342px;
+}
+
+#title {
+    width: 1217px;
+    height: 92px;
+    left: 147px;
+    top: 107px;
+    position: absolute;
+    
+}
+
+#titleBackground {
+    width: 1185px;
+    height: 105px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgb(240, 240, 240);
+    border-radius: 75px;
+}
+
+#titleText {
+    text-decoration: none;
+    width: 430px;
+    height: 67px;
+    left: 400px;
+    top: 0px;
+    position: absolute;
+}
+
+#titleText span:nth-child(1) {
+    color: #343A40;
+    font-size: 65px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+#titleText span:nth-child(2) {
+    color: #1E7E34;
+    font-size: 65px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.menuText {
+    width: 89px;
+    height: 26px;
+    top: 33px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word;
+    left: 282px;
+    text-decoration: none;
+}
+
+
+    
+
+.menuText2 {
+    width: 89px;
+    height: 26px;
+    top: 33px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 103px;
+    left: 164px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+}
+
+.menuText3{
+    height: 26px;
+    top: 33px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 169px;
+    left: 964px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    text-decoration: none;
+}
+
+.menuText4{
+    width: 89px;
+    height: 26px;
+    top: 33px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 89px;
+    left: 75px;
+    font-weight: 700;
+}
+
+#menuLine {
+    width: 175px;
+    height: 14px;
+    left: 971px;
+    top: -70px;
+    position: absolute;
+}
+#activate{
+    text-decoration: none; 
+    width: 119px; 
+    height: 26px; 
+    left: 830px; 
+    top: 33px; 
+    position: absolute; 
+    color: #1E7E34; 
+    font-size: 20px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    word-wrap: break-word
+}
+#textprinc{
+    width: 615px; 
+    height: 192px; 
+    left: 503px; 
+    top: 250px; 
+    position: absolute; 
+    color: rgb(255, 255, 255); 
+    font-size: 80px; 
+    font-family: Poppins; 
+    font-weight: 700; 
+    word-wrap: break-word
+}
+#textheader{
+    width: 730px; 
+    height: 160px; 
+    left: 380px; 
+    top: 450px; 
+    position: absolute; 
+    text-align: center; 
+    color: rgb(250, 250, 250); 
+    font-size: 40px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    word-wrap: break-word
+}
+#iini{
+    width: 1502px; 
+    height: 1001px; 
+    left: 46px; 
+    top: 532px; 
+    position: absolute
+}
+#box{
+    width: 617px; 
+    height: 308px; 
+    left: 69px; 
+    top: 73px; 
+    position: absolute
+}
+.firstbox{
+    width: 617px; 
+    height: 344px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #E1E1E1; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); 
+    border-radius: 37px
+}
+#sensor{
+    text-decoration: none; 
+    width: 382px; 
+    height: 164px; 
+    left: 215px; 
+    top: 105px; 
+    position: absolute; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+#tomate{
+    width: 176px; 
+    height: 46px; 
+    left: 209px; 
+    top: 31px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 40px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    word-wrap: break-word
+}
+#imagen{
+    width: 154px; 
+    height: 216px; 
+    left: 25px; 
+    top: 31px; 
+    position: absolute; 
+    border-radius: 15px
+}
+#opc1{
+    width: 247px; 
+    height: 33px; 
+    left: 364px; 
+    top: 237px; 
+    position: absolute
+}
+#boxopc1{
+    width: 247px; 
+    height: 33px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #1E7E34; 
+    border-radius: 16.50px
+}
+#textopc1{
+    text-decoration: none; 
+    width: 197.60px; 
+    height: 32px; 
+    left: 35px; 
+    top: 1px; 
+    position: absolute; 
+    color: black; 
+    font-size: 20px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+#opc2{
+    width: 247px; 
+    height: 33px; 
+    left: 364px; 
+    top: 285px; 
+    position: absolute
+}
+#boxopc2{
+    width: 247px; 
+    height: 33px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #1E7E34; 
+    border-radius: 16.50px
+}
+#textopc2{
+    text-decoration: none; 
+    width: 197px; 
+    height: 32px; 
+    left: 28px; 
+    top: 1px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 20px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+#opc3{
+    text-decoration: none;
+    width: 247px; 
+    height: 61px; 
+    left: 364px; 
+    top: 333px; 
+    position: absolute
+}
+#boxopc3{
+    width: 247px; 
+    height: 61px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #1E7E34; 
+    border-radius: 30.50px
+}
+#textopc3{
+    text-decoration: none; 
+    width: 197.60px; 
+    height: 59.15px; 
+    left: 28.04px; 
+    top: 1.85px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 20px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    word-wrap: break-word
+}

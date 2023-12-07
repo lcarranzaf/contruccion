@@ -1,0 +1,66 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #CBDDB5;
+    font-family: 'Poppins';
+}
+
+.scanner-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #ffffff;
+}
+
+.scanner-section h1 {
+    color: #4CAF50;
+    font-family: 'Poppins';
+}
+
+.scanner-section p {
+    color: #000000;
+    font-family: 'Poppins';
+}
+
+
+#scan-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins';
+}
+
+#scan-button:hover {
+    background-color: #105213;
+    font-family: 'Poppins';
+}
+div{
+    position: relative;
+    background-color: beige;
+    padding: 50px;
+    text-align: center;
+    
+   
+}
+.boton{
+    margin-top: 30px;
+    width: 90px;
+    height: 35px;
+    border-radius: 3px;
+    background-color: #105213;
+    font-family: 'Poppins';
+    border-bottom: #ffffff;
+
+}
+
+.boton:hover{
+    color: #ffffff;
+}

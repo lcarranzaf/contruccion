@@ -1,0 +1,30 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/misplantas/misplantas.css' %}">
+<nav>
+    <div id="header">
+        
+        <div id="headerBackground"></div>
+        <img id="headerImage" src="{% static 'img/logo.jpeg' %}" />
+        <div class="headerText">FAQs</div>
+        <div class="headerText3">Help</div>
+        <div class="headerText2">Support</div>
+        <div class="headerLine"></div>
+        <div class="headerLine2"></div>
+        <div id="title">
+            <div id="titleBackground"></div>
+            <a id="titleText" href="{% url 'index' %}">
+                <span>Plant</span>
+                <span>Friend</span></a>
+            <a class="menuText" href= "{%url 'mostrar_plantas' %}" >Plantas</a>
+        <a class="menuText2"href= "{%url 'about' %}" >About us</a>
+        <div >
+            <a class="menuText3" href="{% url 'login' %}">Cerrar sesion</a>
+        </div>
+            <a class="menuText4" href="{% url 'index' %}" >Home</a> 
+            
+            <a href="{% url 'misplantas' %}"><div id="activate">Mis plantas</div></a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
