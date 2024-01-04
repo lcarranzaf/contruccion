@@ -12,17 +12,51 @@
 </head>
 
 <body>
-    <div>
-    <h3><a href="{% url 'index' %}">Home</a></h3>
+    {% include "navbar/navbar.html" %} 
+    <div class="box">
     <h2 class="title">Cargar Imagen</h2>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="imagen" accept="image/*" required>
+        <input type="file" id="real-file" name="imagen" accept="image/*" hidden="hidden" />
+        <button type="button" id="custom-button"><strong>📤CARGAR FOTO</strong></button>
+        <span id="custom-text">No file chosen, yet.</span>
         <br>
+        <!-- Agregamos un contenedor para la previsualización -->
+        <div id="image-preview-container" class="box-preview" >
+            <img id="image-preview" src="#" alt="Vista previa de la imagen" />
+        </div>
         <button class="boton" type="submit">Enviar</button>
     </form>
     </div>  
+    
+    <script>
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
+        const imagePreview = document.getElementById("image-preview");
+
+        customBtn.addEventListener("click", function() {
+            realFileBtn.click();
+        });
+
+        realFileBtn.addEventListener("change", function() {
+            if (realFileBtn.files.length > 0) {
+                const file = realFileBtn.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+
+                customTxt.innerHTML = file.name;
+            } else {
+                customTxt.innerHTML = "No file chosen, yet.";
+                // Limpiar la previsualización si se cancela la selección de la imagen
+                imagePreview.src = "#";
+            }
+        });
+    </script>
 </body>
 </html>
-
-

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor de Humedad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        #labelChart {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .sensor{
+            margin-top: 150px;
+        }
+        #saveButton{
+            background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        }
+    </style>
+</head>
+<body onload="InitGrafic('{{ humedad }}')">
+    {% include "navbar/navbar.html" %} 
+    <div class="sensor">
+        <h1>Sensor de Humedad</h1>
+        
+        <div class="custom-div">
+            <canvas id="labelChart" ></canvas>
+        </div>
+        <p>La humedad del suelo es de {{ humedad }} %</p>
+        <button id="saveButton"><a href="{% url 'misplantas' %}">Volver</a></button>
+    </div>
+    <!-- MDB -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        function InitGrafic(porcentaje) {porcentaje=Number(porcentaje)
+        var ctxP = document.getElementById("labelChart").getContext('2d');
+        var data = {
+            labels: ["Humedad", "Sequedad"],
+            datasets: [{
+                data: [porcentaje, 100-porcentaje],
+                backgroundColor: ["skyblue","gray"],
+                hoverBackgroundColor: ["deepskyblue","darkgray"]
+            }]
+        };
+        createChart(ctxP, data);
+    }
+
+    function createChart(ctx, data) {
+        var myPieChart = new Chart(ctx, {
+            plugins: [ChartDataLabels],
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'right',
+                    labels: {
+                        padding: 20,
+                        boxWidth: 10
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        formatter: (value, ctx) => {
+                            let sum = 0;
+                            let dataArr = ctx.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = (value * 100 / sum).toFixed(2) + "%";
+                            return percentage;
+                        },
+                        color: 'white',
+                        labels: {
+                            title: {
+                                font: {
+                                    size: '16'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Función para actualizar la humedad mediante una petición AJAX
+    function actualizarHumedad() {
+            $.get('/humedad/', function (data) {
+                // Actualizar el contenido de #humedad_valor en la página
+                $('#humedad_valor').text(data);
+                // Volver a inicializar el gráfico con el nuevo valor de humedad
+                InitGrafic(data);
+            });
+        }
+
+        // Recargar la página cada 5 segundos (5000 milisegundos)
+        setInterval(function () {
+            // Llamar a la función para actualizar la humedad
+            actualizarHumedad();
+        }, 5000);
+
+    </script>
+
+</body>
+</html>

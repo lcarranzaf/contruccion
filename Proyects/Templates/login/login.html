@@ -23,21 +23,28 @@
                           <div class="card-3d-wrapper">
                               <div class="card-front">
                                   <div class="center-wrap">
-                                      <div class="section text-center">
-                                          <h4 class="co mb-4 pb-3">Iniciar Sesión</h4>
-                                          <form method="POST" action="{% url 'login' %}">
-                                              {% csrf_token %}
-                                              <div class="form-group">
-                                                  <input id="username" type="text" name="username" class="form-style"  placeholder="username">
-                                                  <i class="input-icon uil uil-user"></i>
-                                              </div>
-                                              <div class="form-group mt-2">
-                                                  <input id="password" type="password" name="password" class="form-style" placeholder="Contraseña" >
-                                                  <i class="input-icon uil uil-lock-alt centered-icon"></i>
-                                              </div>
-                                              <button type="submit" class="co btn mt-4">Ingresar</button>
-                                          </form>
-                                          <p class="mb-0 mt-4 text-center"><a class="link" href="#">¿Olvidó su contraseña?</a></p>
+                                    <div class="section text-center">
+                                        <h4 class="co mb-4 pb-3">Iniciar Sesión</h4>
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-danger" role="alert">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                        <form method="POST" action="{% url 'login' %}">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input id="username" type="text" name="username" class="form-style" placeholder="username">
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input id="password" type="password" name="password" class="form-style" placeholder="Contraseña">
+                                                <i class="input-icon uil uil-lock-alt centered-icon"></i>
+                                            </div>
+                                            <button type="submit" class="co btn mt-4">Ingresar</button>
+                                        </form>
+                                          
                                       </div>
                                   </div>
                               </div>

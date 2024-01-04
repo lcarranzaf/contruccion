@@ -1,17 +1,38 @@
+
+{% block content %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resultado de Reconocimiento</title>
+    <title>Cargar Imagen</title>
+    {% block head %} 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/reconocimiento/reconocimiento.css' %}">
+{% endblock %}
 </head>
+
 <body>
+{% include "navbar/navbar.html" %} 
+<div class="box">
+<h1>Resultado del Reconocimiento de Planta</h1>
 
-<h1>Resultado de Reconocimiento</h1>
+    {% if nombre_planta %}
+        <h2>Planta detectada:</h2>
+        <!-- <img src="{{ imagen_url }}" alt="{{ nombre_planta }}"> -->
+        <h3>Posibles resultados</h3>
+        {% for planta in nombre_planta %}
+        <ul> <li style="list-style-type: none;"> {{ planta }}</li></ul>
+        {% endfor %}
 
-{% if nombre_planta %}
-    <p>Nombre de la planta: {{ nombre_planta }}</p>
-{% else %}
-    <p>No se pudo determinar el nombre de la planta.</p>
-{% endif %}
+    {% else %}
+        <h2>No se detectó una planta</h2>
+        <p>La imagen no corresponde a una planta.</p>
+    {% endif %}
+</div>
 
-</body>
-</html>
+   <button class="boton"><a class="box-text" href="{% url 'reconocimiento_plantas' %}">Volver</a></button> 
+{% endblock %}
+
+

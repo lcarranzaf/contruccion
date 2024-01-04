@@ -1,11 +1,18 @@
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/login/inicio.css' %}">
+<link rel="stylesheet" href="{% static 'styles/inicio.css' %}">
 <div class="card-back ">
     <div class="center-wrap">
         <div class="section text-center ">
-            <h4 class="mb-1 pb-1  ">Registrarse</h4>
-            <form method="post" action="{% url 'signup' %}">
+            <h4 class="mb-1 pb-1">Registrarse</h4>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form method="POST" action="{% url 'signup' %}">
                 {% csrf_token %}
                 <div  class="form-group mt-2">
                   <input htmlFor="username" id="username" type="text" name="username" class="form-style" placeholder="username">

@@ -1,16 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin, User
-from django.utils import timezone
+from django.contrib.auth.models import User as UserModel
 
+#tabla de guias
 class Guias(models.Model):
     nombre = models.CharField(max_length=250)
-    descripcion= models.CharField(max_length=2000)
-    imagen = models.ImageField(upload_to='plant_images/', blank=True, null=True)
+    comentario= models.TextField()
+    imagen = models.ImageField(upload_to='plant_guide/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre
     
-
+#tabla de registro
 class UserModel(models.Model):
     userId=models.AutoField(primary_key=True)
     name=models.CharField(max_length=255,blank=False)
@@ -21,43 +22,42 @@ class UserModel(models.Model):
     updateDate=models.DateTimeField(auto_now=True)
     def __str__(self) :
         return self.name
-    
+#tabla de tipos de plantas
+class Tipo_Planta(models.Model):
+    idtipo=models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+
+#tabla de Pantas
 class Planta(models.Model):
+   idplanta = models.AutoField(primary_key=True)
    nombre = models.CharField(max_length=100)
    comentario = models.TextField()
    imagen = models.ImageField(upload_to='plant_images/', blank=True, null=True)
    guia = models.ForeignKey(Guias, on_delete=models.CASCADE, null=True)
-   usuarios = models.ManyToManyField(UserModel, through='UsuarioPlanta')
-
+   usuarios = models.ManyToManyField(User, through='UsuarioPlanta')
+   tipo = models.ForeignKey(Tipo_Planta, on_delete=models.SET_NULL, null=True)
    def __str__(self):
        return self.nombre
 
+#tabla de usuarios que tienen plantas
 class UsuarioPlanta(models.Model):
-    usuario = models.ForeignKey(UserModel, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     planta = models.ForeignKey(Planta, on_delete=models.CASCADE)
     fecha_registro = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.usuario.name} - {self.planta.nombre}'
+        return f'{self.usuario.username} - {self.planta.nombre}'
+
+class LecturaHumedad(models.Model):
+    valor_humedad = models.CharField(max_length=4)
+    fecha_hora = models.DateTimeField(auto_now_add=True)
+    # usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    # planta = models.ForeignKey(Planta, on_delete=models.CASCADE)
 
 
 
-
-
-
-
-class PlantaRegistro(models.Model):
-    nombre_planta = models.CharField(max_length=200)
-    fecha_riego = models.DateField()
-    comentario = models.TextField()
-    ruta_imagen = models.ImageField(upload_to='imagenes/')
-    valor_humedad = models.DecimalField(max_digits=5, decimal_places=2)
-    def __str__(self):
-       return self.nombre_planta
-    
-    
-    def __str__(self):
-        return self.nombre
-    
-
-    
+    def _str_(self):
+        return f"Humedad: {self.valor_humedad}% - {self.fecha_hora.strftime('%Y-%m-%d %H:%M:%S')}"

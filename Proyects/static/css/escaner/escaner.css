@@ -2,7 +2,7 @@ body {
 
     margin: 0;
     padding: 0;
-    background-color: #CBDDB5;
+    background-color: #f7f7f6;
     font-family: 'Poppins';
 }
 
@@ -38,18 +38,18 @@ body {
     font-family: 'Poppins';
 }
 
-#scan-button:hover {
+/* #scan-button:hover {
     background-color: #105213;
     font-family: 'Poppins';
-}
-div{
+} */
+/* div{
     position: relative;
     background-color: beige;
     padding: 50px;
     text-align: center;
     
    
-}
+} */
 .boton{
     margin-top: 30px;
     width: 90px;
@@ -58,9 +58,51 @@ div{
     background-color: #105213;
     font-family: 'Poppins';
     border-bottom: #ffffff;
+    cursor:pointer;
+    border: none;
 
 }
 
 .boton:hover{
     color: #ffffff;
 }
+ 
+.box{
+    background-color: rgb(221, 223, 221);
+    padding: 25px; /* Ajusta según sea necesario */
+    text-align: center;
+    width: 50%; /* Ajusta según sea necesario */
+    max-width: 400px; /* Ajusta según sea necesario */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 35%;
+    margin-top: 20%;
+    border-radius: 20px;
+    
+}
+.title{
+    margin-bottom: 20px;
+}
+#custom-button {
+    padding: 10px;
+    color: white;
+    background-color: #007400;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #custom-button:hover {
+    background-color: #025913;
+  }
+  
+  #custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+  }
+  #image-preview{
+    height: 200px;
+    width: 175px;
+    margin-top: 10px;
+  }

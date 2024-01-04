@@ -8,24 +8,69 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,200&display=swap" rel="stylesheet">
     {% endblock %}   
-    {% include "navbar/navbar.html" %} 
-    <h1>Todas las plantas</h1>
-    
+    {% include "navbar/navbar.html" %}  
+    <form class="filtForm" id="filtroForm" method="get" action="{% url 'mostrar_plantas' %}">
+        {% csrf_token %}
+        <label for="tipo">Seleccione un tipo de planta:</label>
+        <select id="tipo" name="tipo">
+            <option value="" {% if not tipo_seleccionado %}selected{% endif %}>Mostrar todas las plantas</option>
+            {% for tipo in tipos %}
+                <option value="{{ tipo.idtipo }}" {% if tipo_seleccionado == tipo.idtipo %}selected{% endif %}>{{ tipo.nombre }}</option>
+            {% endfor %}
+        </select>
+    </form>
 
-    <div id="espacio-superior"></div>
+    <!-- <div id="espacio-superior"></div> -->
+    <input type="text" id="filtroNombre" placeholder="Buscar por nombre...">
+    <button onclick="filtrarPlantas()">Filtrar</button>
+    
     
     <div class="plant-container">
-        {% for planta in plantas %}
-            <div class="plant-card">
-                {% if planta.imagen %}
-                    <img src="{{ planta.imagen.url }}" alt="{{ planta.nombre }}">
-                {% else %}
-                    <p>No hay imagen disponible para esta planta.</p>
-                {% endif %}
-                <h2>{{ planta.nombre }}</h2>
-                <p>{{ planta.comentario }}</p>
-                <a href="{% url 'ver_guia' planta.id %}">Ver Guía</a>
+        {% if plantas %}
+            {% for planta in plantas %}
+                <div class="plant-card">
+                    {% if planta.imagen %}
+                        <img src="{{ planta.imagen.url }}" alt="{{ planta.nombre }}">
+                    {% else %}
+                        <p>No hay imagen disponible para esta planta.</p>
+                    {% endif %}
+                    <h2>{{ planta.nombre }}</h2>
+                    <p>{{ planta.comentario }}</p>
+                    <button><a href="{% url 'ver_guia' planta.idplanta %}">Ver Guía</a></button>
+
+                    <!-- Agrega el botón "Agregar" dentro de un formulario por cada planta -->
+                    <form method="post" action="{% url 'agregar_planta_a_usuario' planta.idplanta %}">
+                        {% csrf_token %}
+                        <button type="submit">Agregar a mis plantas</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div id="mensajeNoResultados" style="color: red; margin-top: 10px;">
+                No se encontraron resultados para el tipo seleccionado.
             </div>
-        {% endfor %}
+        {% endif %}
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtén el tipo seleccionado y la lista de tipos
+            let tipoSeleccionado = "{{ tipo_seleccionado }}";
+            let tipos = JSON.parse('{{ tipos_serialized | escapejs }}');
+    
+            // Obtén el elemento de selección
+            let tipoSelect = document.getElementById('tipo');
+    
+            // Establecer el valor seleccionado después de enviar el formulario
+            if (tipoSeleccionado) {
+                tipoSelect.value = tipoSeleccionado;
+            }
+    
+            tipoSelect.addEventListener('change', function() {
+                document.getElementById('filtroForm').submit();
+            });
+        });
+    </script>
 {% endblock %}
+<script src="{% static 'js/filtrobusqueda.js' %}"> </script>
+<script src="{% static 'js/filtrodropdown.js' %}"></script>

@@ -1,15 +1,33 @@
 .title{
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.grid{
+    display: grid;
+    grid-template-columns:5% 50% 5% 25% ;
 }
 .desc{
     font-family:'Poppins';
+    margin-left: 50px;
+    width: 600px;
+    text-align: left;
+    margin-top: 25px;
+    
+}
+.box{
+    background-color: #f2f2f2;
     text-align: center;
-    width: 100px;
+    border-radius: 50px;
 }
 img{
-    width: 150px;
-    height: 175px;
+    width: 275px;
+    height: 375px;
     left: 500px;
+    margin-top: 25px;
+    border-radius: 50px;
+}
+.espacio{
+    height: 250px;
 }

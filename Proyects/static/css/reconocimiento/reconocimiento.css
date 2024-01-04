@@ -1,0 +1,33 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f6;
+    font-family: 'Poppins';
+}
+.box{
+    
+        background-color: beige;
+        padding: 20px;
+        text-align: center;
+        width: 50%; 
+        max-width: 400px; 
+        box-sizing: border-box;
+        margin-top: 20%;
+        margin-left: 35%;
+        border-radius: 10px;
+        list-style-type: none;
+}
+.boton{
+    height: 45px;
+    background-color: rgb(1, 86, 1);
+    color: white;
+    margin-left: 47%;
+    margin-top: 20px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
+.box-text{
+    color: #f7f7f6;
+}
